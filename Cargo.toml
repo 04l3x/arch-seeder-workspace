@@ -1,0 +1,5 @@
+[workspace]
+members = [
+	"arch-seeder-lib",
+	"arch-seeder-tool",
+]

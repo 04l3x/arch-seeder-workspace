@@ -1,0 +1,87 @@
+#setting partition scheme, is needed that the disk is already partioned
+#all partitions all optionally except the root partition
+
+
+[[partition]]
+partition = "boot"
+device = "/dev/sda7"
+fs = "vfat"
+format = false
+
+[[partition]]
+partition = "root"
+device = "/dev/sda6"
+fs = "ext4"
+format = true
+
+[[partition]]
+partition = "home"
+device = "/dev/sda3"
+fs = "ext4"
+format = false
+
+[[partition]]
+partition = "swap"
+device = "/dev/sda5"
+fs = "swap"
+format = true
+
+[[partition]]
+partition = "data"
+device = "/dev/sda4"
+fs = "ext4"
+format = false
+
+#packages list to install
+[packages]
+packages = [ 
+	"base",
+	"linux",
+	"linux-firmware",
+	"dhcpcd",
+	"networkmanager",
+	"nano",
+	"man-db",
+	"man-pages",
+]
+#default = true # install base on current iso optional #currently not available
+
+#setting system config
+[system]
+
+#setting timezone config
+[system.timezone]
+region = "Region"
+city = "City"
+
+#setting localization config
+[system.localization]
+locale = "en_US.UTF-8 UTF-8"
+lang = "en_US.UTF-8"
+#keymap = "" #optional, uncomment for set
+
+#setting network config
+[system.network]
+hostname = "al3xdevnetwork"
+
+#only support 'grub' for now
+[bootloader]
+bootloader = "grub" #actually only support grub
+multiboot = false #detect other os on boot
+bootmode = "uefi" #bios or uefi
+#removable = true #optional default is false
+
+#setting config for root user
+[root]
+passwd = "rootpasswd"
+
+# setting config for users
+# you can add all number of users you want
+[[user]]
+name = "al3x"
+passwd = "al3xpasswd"
+groups = [
+	"wheel",
+]
+#terminal = "zsh" # default bash #currently not available
+
