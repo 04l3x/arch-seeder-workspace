@@ -1,6 +1,6 @@
 [submodule "arch-seeder-tool"]
 	path = arch-seeder-tool
-	url = https://gitlab.com/al3x0s/arch-seeder-tool.git
+	url = https://gitlab.com/0al3x/arch-seeder-tool.git
 [submodule "arch-seeder-lib"]
 	path = arch-seeder-lib
-	url = https://gitlab.com/al3x0s/arch-seeder-lib.git
+	url = https://gitlab.com/0al3x/arch-seeder-lib.git
